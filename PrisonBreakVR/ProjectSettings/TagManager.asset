@@ -7,6 +7,8 @@ TagManager:
   - FxTemporaire
   - Fire
   - projectile
+  - Button
+  - Interactables
   layers:
   - Default
   - TransparentFX
