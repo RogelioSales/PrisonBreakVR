@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Break : MonoBehaviour
 {
+    public GameObject staticWall;
     public GameObject breakVersion;
     public bool isBreaking = false;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            isBreaking = true;
+        }
+    }
     private void Update()
     {
         Breaking();
@@ -16,7 +24,8 @@ public class Break : MonoBehaviour
         if (isBreaking)
         {
             Instantiate(breakVersion, transform.position, transform.rotation);
-            Destroy(gameObject);
+            Destroy(staticWall);
         }
     }
+
 }
